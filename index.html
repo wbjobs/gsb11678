@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebXR 输入可视化</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1>WebXR 输入可视化</h1>
+  <div id="support-badges"></div>
+</header>
+
+<main>
+  <section id="controls">
+    <button id="btn-vr" disabled>进入 VR</button>
+    <button id="btn-ar" disabled>进入 AR</button>
+    <button id="btn-end" disabled>结束会话</button>
+    <button id="btn-resume" disabled hidden>恢复会话</button>
+    <button id="btn-fallback">鼠标模拟模式</button>
+    <label><input type="checkbox" id="chk-log" checked> 记录事件到 IndexedDB</label>
+  </section>
+
+  <section id="status-bar">
+    <span id="session-state">会话: 未启动</span>
+    <span id="message"></span>
+  </section>
+
+  <section id="panels">
+    <div class="panel" id="panel-inputs">
+      <h2>输入源</h2>
+      <div id="input-list"><p class="empty">暂无输入源</p></div>
+    </div>
+    <div class="panel" id="panel-log">
+      <h2>事件日志 <button id="btn-clear-log">清空</button></h2>
+      <div id="event-log"></div>
+    </div>
+  </section>
+
+  <section id="viewport">
+    <canvas id="gl-canvas"></canvas>
+    <canvas id="hud-canvas"></canvas>
+  </section>
+</main>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #10141c; color: #dfe6f0; min-height: 100vh;
+}
+header { padding: 12px 20px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  background: #171d29; border-bottom: 1px solid #2a3346; }
+h1 { font-size: 18px; }
+#support-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+.badge { padding: 3px 10px; border-radius: 12px; font-size: 12px; background: #2a3346; }
+.badge.ok { background: #1d5c38; color: #9ff0c0; }
+.badge.no { background: #5c2626; color: #f0a8a8; }
+.badge.warn { background: #5c4a1d; color: #f0dc9f; }
+
+#controls { display: flex; gap: 10px; align-items: center; padding: 12px 20px; flex-wrap: wrap; }
+button { padding: 8px 16px; border: none; border-radius: 6px; cursor: pointer;
+  background: #2f6fed; color: #fff; font-size: 14px; }
+button:disabled { background: #2a3346; color: #6b768c; cursor: not-allowed; }
+#btn-fallback { background: #3a4763; }
+label { font-size: 13px; color: #9fb0c8; display: flex; gap: 6px; align-items: center; }
+
+#status-bar { padding: 6px 20px; display: flex; gap: 20px; font-size: 13px; color: #9fb0c8; }
+#message { color: #f0c674; }
+
+#panels { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 12px 20px; }
+.panel { background: #171d29; border: 1px solid #2a3346; border-radius: 8px; padding: 12px; min-height: 160px; }
+.panel h2 { font-size: 14px; margin-bottom: 10px; color: #8fb4f0; display: flex; justify-content: space-between; }
+.panel h2 button { padding: 2px 10px; font-size: 12px; background: #2a3346; }
+.empty { color: #5b6780; font-size: 13px; }
+
+.input-card { background: #1d2534; border-radius: 6px; padding: 10px; margin-bottom: 8px; font-size: 13px; }
+.input-card .title { font-weight: 600; margin-bottom: 6px; display: flex; gap: 8px; align-items: center; }
+.tag { font-size: 11px; padding: 1px 8px; border-radius: 10px; background: #2a3346; color: #9fb0c8; }
+.tag.hand { background: #1d5c38; color: #9ff0c0; }
+.tag.lost { background: #5c2626; color: #f0a8a8; }
+.input-card pre { font-family: ui-monospace, monospace; font-size: 11px; color: #9fb0c8;
+  white-space: pre-wrap; margin-top: 4px; }
+.btn-grid { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.btn-ind { width: 26px; height: 26px; border-radius: 4px; background: #2a3346; display: flex;
+  align-items: center; justify-content: center; font-size: 11px; color: #6b768c; }
+.btn-ind.pressed { background: #2f6fed; color: #fff; }
+
+#event-log { max-height: 180px; overflow-y: auto; font-family: ui-monospace, monospace; font-size: 11px; }
+#event-log div { padding: 2px 0; border-bottom: 1px solid #1d2534; color: #9fb0c8; }
+#event-log .err { color: #f0a8a8; }
+#event-log .warn { color: #f0dc9f; }
+
+#viewport { position: relative; margin: 0 20px 20px; height: 46vh; min-height: 320px;
+  border: 1px solid #2a3346; border-radius: 8px; overflow: hidden; background: #0a0d13; }
+#viewport canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#hud-canvas { pointer-events: none; }
