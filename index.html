@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebXR 输入可视化</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- WebGL 渲染层 -->
+  <canvas id="gl-canvas"></canvas>
+  <!-- Canvas 2D HUD 层 -->
+  <canvas id="hud-canvas"></canvas>
+
+  <!-- 顶部控制条 -->
+  <header id="topbar">
+    <h1>WebXR 输入可视化</h1>
+    <div class="actions">
+      <button id="btn-vr" disabled>进入 VR</button>
+      <button id="btn-ar" disabled>进入 AR</button>
+      <button id="btn-end" disabled>结束会话</button>
+      <button id="btn-fallback">鼠标模拟</button>
+      <button id="btn-export">导出日志</button>
+    </div>
+  </header>
+
+  <!-- 状态横幅（错误 / 提示） -->
+  <div id="banner" class="hidden"></div>
+
+  <!-- 输入源面板 -->
+  <aside id="panel">
+    <h2>输入源</h2>
+    <div id="source-list" class="source-list"></div>
+    <h2>会话日志</h2>
+    <div id="log-list" class="log-list"></div>
+  </aside>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
